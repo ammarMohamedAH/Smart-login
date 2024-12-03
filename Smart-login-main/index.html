@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-Up">
+            <form>
+                <h1>Crate Account</h1>
+                <input type="text" name="nameUp" id="nameUp" placeholder="Name">
+                
+                <input type="email" name="mailUp" id="mailUp" placeholder="Email">
+                <div id="warningBoxNameUp" >
+                    Mail alredy exist!
+                </div>
+                <input type="password" name="passwordUp" id="passwordUp" placeholder="Password">
+                <div id="warningBoxAll" >
+                    All inputs is required
+                </div>
+                <button id="signUp-btn">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <input type="email" name="mailIn" id="mailIn" placeholder="Email">
+                <input type="password" name="passwordIn" id="passwordIn" placeholder="Password">
+                <div id="warningBoxMailin" >
+                    incorrect email or password
+                </div>
+                <div id="warningBoxAllin" >
+                    All inputs is required
+                </div>
+                <button type="button" id="signIn-btn" ><a >Sign in</a></button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter Your Personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Regester with Your Personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/page.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #5129a8;
+  background: linear-gradient(to right, #5c6bc0, #512da8);
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+.container {
+  width: 70%;
+  margin: auto;
+}
+nav {
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+}
+
+nav .container .logo a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+nav .container > a {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+nav .container > a:hover {
+  background-color: white;
+  color: #5129a8;
+}
+nav .container > a:focus {
+  border: 1px solid white;
+}
+.box {
+  height: 100%;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box .innertext {
+  background-color: #5129a8;
+  background: linear-gradient(to right, #5c6bc0, #512da8);
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 5rem;
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 100%;
+  }
+  nav .container .logo a {
+    font-size: 1.5rem;
+  }
+}
