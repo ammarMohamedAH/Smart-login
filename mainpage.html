@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Login</title>
-    <link rel="stylesheet" href="css/mainpagestyle.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/mainpagestyle.css" />
+    <script>
+      var userName = document.querySelector(".box .innertext span");
+      userName.innerHTML = localStorage.getItem("user");
+    </script>
+  </head>
+  <body>
     <nav>
-    <div class="container">
-            <div class="logo"><a href="#">Smart Login</a></div>
-            <a href="index.html">Logout</a>
-        </div>
-        </nav>
-        <div class="box"><div class="innertext">
-            Welcome <span>Ammar</span>
-        </div></div>
-        <script src="js/page2.js"></script>
-</body>
+      <div class="container">
+        <div class="logo"><a href="#">Smart Login</a></div>
+        <a href="index.html">Logout</a>
+      </div>
+    </nav>
+    <div class="box">
+      <div class="innertext">Welcome <span>Ammar</span></div>
+    </div>
+  </body>
 </html>
