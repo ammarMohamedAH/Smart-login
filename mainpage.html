@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Login</title>
     <link rel="stylesheet" href="css/mainpagestyle.css" />
-    <script>
-      var userName = document.querySelector(".box .innertext span");
-      userName.innerHTML = localStorage.getItem("user");
-    </script>
   </head>
   <body>
     <nav>
@@ -18,7 +14,11 @@
       </div>
     </nav>
     <div class="box">
-      <div class="innertext">Welcome <span>Ammar</span></div>
+      <div class="innertext">Welcome <span id="text"></span></div>
     </div>
+    <script>
+      var userName = document.getElementById("text");
+      userName.innerHTML = localStorage.getItem("user");
+    </script>
   </body>
 </html>
