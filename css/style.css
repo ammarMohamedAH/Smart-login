@@ -219,7 +219,7 @@ body {
 #warningBoxNameUp,
 #warningBoxAll,
 #warningBoxAllin,
-#warningBoxMailin {
+#warningBoxMailin,#warningBoxMailnotValid,#warningBoxPassnotValid {
   background-color: #f8d7da;
   color: #721c24;
   padding: 5px;
@@ -232,7 +232,8 @@ body {
 }
 #warningBoxAll,
 #warningBoxAllin,
-#warningBoxMailin {
+#warningBoxMailin,
+#warningBoxMailnotValid,#warningBoxPassnotValid {
   text-align: center;
   border: none;
   background-color: transparent;
