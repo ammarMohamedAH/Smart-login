@@ -27,6 +27,9 @@ if (JSON.parse(localStorage.getItem("usersData"))) {
     dataArr = [];
 }
 
+// Regexs
+var mailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+var passRegex=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
 // sign up preventDefault
 signUpBtn.addEventListener("click", function (e) {
     e.preventDefault()
@@ -36,30 +39,49 @@ signUpBtn.addEventListener("click", function (e) {
 signUpBtn.addEventListener("click", signUp)
 // get users data to sign up
 function signUp() {
-
+  signUpMail.style="margin-bottom: 1.5rem;";
+  signUpPassword.style="margin-bottom: 1.5rem;";
     if(signUpValidation() ){
         if(signUpName.value && signUpMail.value && signUpPassword.value){
+           document.getElementById("warningBoxAll").style="display:none"
+           if (mailRegex.test(signUpMail.value) && passRegex.test(signUpPassword.value)) {
             var signData = {
-                signUpName: signUpName.value,
-                signUpEMail: signUpMail.value,
-                signUpPassword: signUpPassword.value,
-            }
-            dataArr.push(signData);
-            localStorage.setItem("usersData", JSON.stringify(dataArr));
-            container.classList.remove("active");
-            document.getElementById("warningBoxAll").style="display:none"
-            clearSignUp()
+              signUpName: signUpName.value,
+              signUpEMail: signUpMail.value,
+              signUpPassword: signUpPassword.value,
+          }
+          dataArr.push(signData);
+          localStorage.setItem("usersData", JSON.stringify(dataArr));
+          container.classList.remove("active");
+          document.getElementById("warningBoxMailnotValid").style="display:none"
+          document.getElementById("warningBoxPassnotValid").style="display:none"
+          clearSignUp()
+           }else if(!mailRegex.test(signUpMail.value) && passRegex.test(signUpPassword.value)){
+            signUpMail.style="margin-bottom: 5px;";
+            document.getElementById("warningBoxMailnotValid").style="display:block"
+             document.getElementById("warningBoxPassnotValid").style="display:none"
+           }else if(mailRegex.test(signUpMail.value) && !passRegex.test(signUpPassword.value)){
+            signUpPassword.style="margin-bottom: 5px;";
+            document.getElementById("warningBoxPassnotValid").style="display:block"
+            document.getElementById("warningBoxMailnotValid").style="display:none"
+           }else if(!mailRegex.test(signUpMail.value) && !passRegex.test(signUpPassword.value)){
+            signUpMail.style="margin-bottom: 5px;";
+            document.getElementById("warningBoxMailnotValid").style="display:block"
+            signUpPassword.style="margin-bottom: 5px;";
+            document.getElementById("warningBoxPassnotValid").style="display:block"
+           }
         }else{
             document.getElementById("warningBoxAll").style="display:block";
             
         }
         document.getElementById("warningBoxNameUp").style="display:none"
-        signUpMail.style="margin-bottom: 1.5rem;";
+        
     }else{
         signUpMail.style="margin-bottom: 5px;";
         document.getElementById("warningBoxNameUp").style="display:block"
     }
 }
+
 
  function signUpValidation() {
     for (var i = 0; i < dataArr.length; i++) {
